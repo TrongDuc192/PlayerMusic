@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music player</title>
+    <link rel="stylesheet" href="./asset/fonts/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+
+  <div class="app">
+    <div class="home-music__nav">
+      <div class="music-nav__empty">
+        <i class="music-nav__empty-icon fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="music-nav__search">
+        <input type="search" class="music-nav__search-input">
+        <!-- SEARCH HISTORY -->
+        <div class="music-nav__search-history ">
+          <!-- active -->
+          <h4 class="music-nav__search-history-label">
+            <span class="music-nav__search-history-label-name">Lịch sử tìm kiếm</span>
+            <span class="music-nav__search-history-label-del">Xóa</span>
+          </h4> 
+          <ul class="music-nav__search-history-list">
+            <li class="music-nav__search-history-item">
+              <a href="#" class="music-nav__search-history-item-link">
+                <span class="music-nav__search-history-title">Hãy trao cho anh Hãy trao cho anh Hãy trao cho anh Hãy trao cho anh</span>
+                <span class="music-nav__search-history-xmark">
+                  <i class="music-nav__search-history-icon fa-solid fa-xmark"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="music-nav__search-result ">
+          <!-- active -->
+          <ul class="music-nav__search-result-list">
+            <li class="music-nav__search-result-item">
+              <span class="music-nav__search-result-title">Chúng ta của tương lai</span>
+              <div class="music-nav__search-result-icon">
+                <i class="fa-regular fa-heart"></i> 
+                <!-- fa-solid -->
+              </div>
+            </li>
+            <li class="music-nav__search-result-item">
+              <span class="music-nav__search-result-title">Chúng ta của tương lai Chúng ta của tương lai Chúng ta của tương lai</span>
+              <div class="music-nav__search-result-icon">
+                <i class="fa-regular fa-heart"></i> 
+                <!-- fa-solid -->
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="music-nav__noti">
+        <i class="music-nav__noti-icon fa-solid fa-bell"></i>
+      </div>
+    </div>
+    <main class="home-music__content">
+      <!-- Tạo mới và cập nhật playlist và thêm song vào playlist-->
+      <div class="credate-pl-wrap ">
+        <!-- Active -->
+        <div class="credate-pl-container">
+          <span class="credate-pl__add-song-label">
+            <span class="update-playlist__title ">Đổi tên playlist</span>
+            <!-- Active -->
+            <span class="credate-pl__add-song-title ">Thêm bài hát vào...</span>
+            <!-- Active -->
+            <span class="credate-pl__new-pl-title ">Tạo playlist</span>
+            <!-- Active -->
+            <i class="credate-pl__close-icon fa-solid fa-xmark" title="Đóng"></i>
+          </span>
+
+          <div class="credate-pl__add-song-list ">
+            <!-- Active -->
+            
+          </div>
+
+          <span class="credate-pl__create-title ">
+            <!-- Active -->
+            <i class="fa-solid fa-plus"></i>
+            Tạo danh sách phát mới
+          </span>
+          
+          <div class="input-form__info-pl ">
+            <!-- Active -->
+            <label class="input-form__label" for="input-form__label">Tên</label>
+            <input type="text" id="input-form__label" class="input-form__content" placeholder="Nhập tên danh sách phát" maxlength="30"required>
+            <div class="warn-count-wrap">
+              <span class="warning-status ">
+                <span class="warning-status__title">Bắt buộc</span>
+              </span>
+              <span class="count-characters">
+                <span class="count-characters-value">0</span>/30
+              </span>
+            </div>
+            <span class="credate-playlist__btn">Cập nhật | Tạo</span>
+          </div>
+        </div>
+      </div>
+      <!-- Dashboard -->
+      <div class="dashboard light-mode">
+        <!-- Header -->
+        <header class="dashboard-header">
+          <div class="header__back">
+            <i class="header__back-icon fa-solid fa-angles-left"></i>
+          </div>
+          <div class="header__title">
+            <h4>Playlist: <span class="header__playlist">Tình yêu</span></h4>
+            <h2>String 57th & 9th</h2>
+          </div>
+          <div class="header__search">
+            <i class="header__search-icon active fa-solid fa-magnifying-glass"></i>
+            <!-- active -->
+          </div>
+        </header>
+    
+        <!-- CD -->
+        <div class="cd">
+          <div class="cd-thumb">
+  
+          </div>
+        </div>
+    
+        <!-- Control -->
+        <div class="control">
+          <div class="btn light-mode btn-sun-moon">
+              <i class="btn-sun active fa-solid fa-sun"></i>
+              <i class="btn-moon fa-solid fa-moon"></i>
+          </div>
+          <div class="btn light-mode btn-repeat">
+              <i class="fa-solid fa-rotate-right"></i>
+          </div>
+          <div class="btn light-mode btn-prev">
+              <i class="fa-solid fa-backward-step"></i>
+          </div>
+          <div class="btn light-mode btn-toggle-play">
+              <div class="btn-toggle-bgr light-mode">
+                <i class="fa-solid fa-pause icon-pause"></i>
+                <i class="fa-solid fa-play icon-play"></i>
+              </div>
+          </div>
+          <div class="btn light-mode btn-next">
+              <i class="fa-solid fa-forward-step"></i>
+          </div>
+          <div class="btn light-mode btn-random">
+              <i class="btn-random-shuffle fa-solid fa-shuffle">
+                <i class="btn-repeat-1 fa-solid fa-1"></i>
+              </i>
+          </div>
+          <div class="btn light-mode btn-volume">
+            <div class="process-volume-wrap">
+              <input id="progress-volume" class="progress-volume" type="range" min="0" max="1" step="0.01" value="1">
+            </div>
+            <i class="volume-high active fa-solid fa-volume-high"></i>
+            <i class="volume-low fa-solid fa-volume-low"></i>
+            <i class="volume-xmark fa-solid fa-volume-xmark"></i>
+          </div>
+        </div>
+    
+        <input id="progress" class="progress" type="range" value="0" step="0.1" min="0" max="100">
+        
+        <div class="progress-duration">
+            <span id="current-duration"><span id="current-minutes">_</span>:<span id="current-seconds">_</span></span>
+            <span id="total-duration"><span id="total-minutes">_</span>:<span id="total-seconds">_</span></span>
+        </div>
+  
+        <audio id="audio" src=""></audio>
+      </div>
+      <!-- Playlist tab, favorite tab -->
+      <div class="option-tab">
+        <div class="option-tab__back">
+          <i class="option-tab__back-icon fa-solid fa-circle-chevron-left"></i>
+        </div>
+        <div class="option-tab__label">
+          <span class="option-tab__title"></span>
+          <p class="option-tab__para"></p>
+        </div>
+        <div class="option-tab__action">
+          <i class="option-tab__action-plus fa-solid fa-folder-plus"></i>
+        </div>
+      </div>
+      <!-- TAB DESCOVERY, class active để hiện block-->
+      <div class="descovery-tab active">
+        <div class="descovery__wrap">
+          <div class="descovery__news">
+            <span class="des-news__btn-left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </span>
+            <div class="slideshow-wrap">
+              <div class="slideshow-container">
+              
+              </div>
+              <div class="des-news__sub-slide">
+               
+              </div>
+            </div>
+            <span class="des-news__btn-right">
+              <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            
+          </div>
+          <div class="descovery__project">
+            <h2 class="descovery__title">Remake simple Music_Player</h2>
+            <div class="descovery__content">
+              <p class="descovery__para-click">
+                Có thể click vào dưới đây! - Hiển thị danh sách nhạc đang phát bài hát hiện tại - Focus listening music tab. 
+              </p>
+              <img class="descovery__img-can-click" src="./asset/img/others/canClickHere.png" alt="Section can click">
+              <span class="descovery__option-title">Chức năng cơ bản Music player:</span>
+              <ul class="descovery__option-list">
+                <li class="descovery__option-item">Playlist: Tạo mới playlist, sửa tên playlist, xóa playlist.</li>
+                <li class="descovery__option-item">Bài hát trong Playlist: Thêm vào playlist khác, xóa khỏi playlist hiện tại.</li>
+                <li class="descovery__option-item">Bài hát trong Favorite: Thêm vào playlist, xóa khỏi favorite.</li>
+                <li class="descovery__option-item">Bài hát trong Library: Thêm vào playlist, thêm vào favorite.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="descovery__song-library">
+            
+          </div>
+        </div>
+      </div>
+      <!-- Playlist: 2 class active:  "playlist" trạng thái home, "playlist play-active": trạng thái nhạc đang phát  -->
+      <!-- class active: trạng thái đang trong playlist -->
+      <div class="playlist light-mode">
+      
+      </div>
+      <!-- TAB PERSONAL, class active để hiện block -->
+      <div class="personal-tab ">
+        <div class="personal__wrap">
+          <div class="personal__info-user">
+            <div class="personal__current-info">
+              <div class="personal__img-info">
+
+                <i class="personal__upload-img fa-solid fa-upload"></i>
+              </div>
+              <div class="personal__personal-info">
+                <div class="personal__name-info">
+                  <span for="name-info">Name:</span>
+                  <span class="name-info__label">Trọng Đức</span>
+                </div>
+                <div class="personal__num-phone-info">
+                  <span for="num-phone-info">Phone:</span>
+                  <span class="num-phone-info__label">0797951522</span>
+                </div>
+                <div class="personal__mail-info">
+                  <span for="mail-info">Email:</span>
+                  <span class="mail-info__label">trongduc192.hi2@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <span class="personal__update-info">Sửa thông tin</span>
+          </div>
+          <div class="personal__about-me">
+            <h4 class="per-about-me__title">Contact me</h4>
+            <ul class="per-about-me__socials">
+              <li class="per-about-me__social-item">
+                <a href="#" class="per-about-me__social-link">
+                  <i class="social-item-fb fa-brands fa-facebook"></i>
+                </a>
+              </li>
+              <li class="per-about-me__social-item">
+                <a href="#" class="per-about-me__social-link">
+                  <i class="social-item-insta fa-brands fa-square-instagram"></i>
+                </a>
+              </li>
+              <li class="per-about-me__social-item">
+                <a href="#" class="per-about-me__social-link">
+                  <i class="social-item-ytb fa-brands fa-youtube"></i>
+                </a>
+              </li>
+              <li class="per-about-me__social-item">
+                <a href="#"  class="per-about-me__social-link">
+                  <i class="social-item-linkin fa-brands fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="personal__library-song">
+            <h4 class="per-library-song__title">Library Song</h4>
+            <div>
+              <span class="per-library-song__btn">Show library song</span>
+            </div>
+          </div>
+          <div class="personal__auth"> 
+             <span class="personal__auth-product">©2024 Music Player.</span>
+             <span class="personal__auth-by">Sản phẩm được xây dựng bởi <a href="https://www.facebook.com/Pudding.am.I?locale=vi_VN" target="_blank">Trọng Đức</a></span>
+          </div>
+        </div>
+      </div>
+      <!-- Playlist HOME -->
+      <!-- class: active ON -->
+      <div class="playlist-home ">
+        <ul class="pl-home__list">
+          
+        </ul>
+      </div>
+      <!-- Search Song -->
+      <div class="search-wrap light-mode"> 
+        <!-- active -->
+        <div class="search-wrap__container">
+
+          <div class="search-bar__hiden">
+            <div class="search-bar">
+              <div class="search-bar__div">
+                <i class="search-bar__icon fa-solid fa-magnifying-glass"></i>
+              </div>
+              <div class="search-bar__content">
+                <input type="search" class="search-bar__input" placeholder="Tìm kiếm bài hát...">
+              </div>
+            </div>
+          </div>
+          <!-- SEARCH HISTORY -->
+          <div class="search-history ">
+            <!-- active -->
+            <h4 class="search-history__label">
+              <span class="search-history__label-name">Lịch sử tìm kiếm</span>
+              <span class="search-history__label-del">Xóa</span>
+            </h4>
+            <ul class="search-history__list">
+              <li class="search-history__item">
+                <a href="#" class="search-history__item-link">
+                  <span class="search-history__title">Hãy trao cho anh Hãy trao cho anh Hãy trao cho anh Hãy trao cho anh</span>
+                  <span class="search-history__xmark">
+                    <i class="search-history__icon fa-solid fa-xmark"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="search-result ">
+            <!-- active -->
+            <ul class="search-result__list">
+              <li class="search-result__item">
+                <span class="search-result__title">Chúng ta của tương lai</span>
+                <div class="search-result__icon">
+                  <i class="fa-regular fa-heart"></i> 
+                  <!-- fa-solid -->
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="home-music__player">
+      <!-- CONTROL PLAY HOME -->
+      <!-- class active: home-play-active -->
+      <div class="music-player__control">
+          <div class="player-control__wrap">
+            <div class="player-control__label">
+              <span class="player-control__img-wrap">
+                <span class="player-control__img"></span>
+              </span>
+              <span class="player-control__title">
+                <h4>Tên bài hát hãy trao cho anh alo alo alo alo</h4>
+                <p>Nghệ sĩ</p>
+              </span>
+            </div>
+            <!--class: active -->
+            <span class="player-control__favorite ">
+              <i class="regular-heart fa-regular fa-heart"></i>
+              <i class="solid-heart fa-solid fa-heart"></i>
+            </span>
+          </div>
+          
+          <div class="player-control__control">
+            <!--class: active -->
+            <span class="player-control__play ">
+              <i class="player-control__icon-play fa-solid fa-play"></i>
+              <i class="player-control__icon-pause fa-solid fa-pause"></i>
+            </span>
+            <span class="player-control__next">
+              <i class="player-control__icon-next fa-solid fa-forward-step"></i>
+            </span>
+          </div>
+      </div>
+      <!-- HOME DIRECTION -->
+      <div class="music-player__wrap">
+        <!-- class: active -->
+        <span class="music-player__descovery active">
+          <div class="music-player__descovery-span">
+            <i class="fa-solid fa-house-fire"></i>
+          </div>
+          <span>Khám phá</span>
+        </span>
+        <span class="music-player__playlist ">
+          <div class="music-player__playlist-span">
+            <i class="fa-solid fa-chart-bar"></i>
+          </div>
+          <span>D.sách phát</span>
+        </span>
+        <span class="music-player__favorite">
+          <div class="music-player__favorite-span">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <span>Yêu thích</span>
+        </span>
+        <span class="music-player__personal">
+          <div class="music-player__personal-user"></div>
+          <span>Cá nhân</span>
+        </span>
+      </div>
+    </footer>
+  </div>
+      <!-- Design from: https://static.collectui.com/shots/3671744/musicloud-revolutionary-app-for-music-streaming-large -->
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
